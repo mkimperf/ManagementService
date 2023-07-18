@@ -18,7 +18,7 @@ public class ManagementServiceController {
 
     @GetMapping("/user/{id}")
     public UserBean getUser(@PathVariable int id) {
-        return restTemplate.getForObject("http://localhost:8200/api/v1/user/{id}", UserBean.class,id);
+    	return restTemplate.getForObject("http://localhost:8200/api/v1/user/{id}", UserBean.class,id);
     }
 
     @DeleteMapping("/user/{id}")

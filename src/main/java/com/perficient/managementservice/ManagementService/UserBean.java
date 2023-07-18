@@ -8,6 +8,31 @@ import lombok.Setter;
 public class UserBean {
 
 		private String firstName;
+		
+		private String lastName;
+
+        private String gender;
+
+        private String emailAddress;
+
+        private String phoneNumbers;
+
+        private Integer age;
+        
+        public UserBean() {
+        	
+        }
+        
+        public UserBean(String firstName, String lastName, String gender, String emailAddress, String phoneNumbers,
+    			Integer age) {
+    		super();
+    		this.firstName = firstName;
+    		this.lastName = lastName;
+    		this.gender = gender;
+    		this.emailAddress = emailAddress;
+    		this.phoneNumbers = phoneNumbers;
+    		this.age = age;
+    	}
 
         public String getFirstName() {
 			return firstName;
@@ -56,26 +81,5 @@ public class UserBean {
 		public void setAge(Integer age) {
 			this.age = age;
 		}
-
-		private String lastName;
-
-        private String gender;
-
-        private String emailAddress;
-
-        private String phoneNumbers;
-
-        private Integer age;
-        
-        public UserBean(String firstName, String lastName, String gender, String emailAddress, String phoneNumbers,
-    			Integer age) {
-    		super();
-    		this.firstName = firstName;
-    		this.lastName = lastName;
-    		this.gender = gender;
-    		this.emailAddress = emailAddress;
-    		this.phoneNumbers = phoneNumbers;
-    		this.age = age;
-    	}
 
 }
