@@ -55,17 +55,17 @@ public class ManagementServiceController {
         return restTemplate.getForObject("http://localhost:8100/api/v1/users", List.class);
     }
     
-    @GetMapping("/appointment/{id}")
+    @GetMapping("/appointments/{id}")
     public AppointmentBean getAppintment(@PathVariable int id) {
         return restTemplate.getForObject("http://localhost:8100/api/v1/user/{id}", AppointmentBean.class, id);
     }
 
-    @DeleteMapping("/appointment/{id}")
+    @DeleteMapping("/appointments/{id}")
     public void deleteAppointment(@PathVariable int id) {
         restTemplate.delete("http://localhost:8100/api/v1/user/{id}", id);
     }
 
-    @PostMapping("/appointment")
+    @PostMapping("/appointments")
     public AppointmentBean createAppointment(@RequestBody AppointmentBean user) {
         return restTemplate.postForObject("http://localhost:8200/api/v1/user", user, AppointmentBean.class);
     }
