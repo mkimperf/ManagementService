@@ -64,7 +64,7 @@ public class ManagementServiceController {
     //error
     @DeleteMapping("/appointments/{aptId}")
     public void deleteAppointment(@PathVariable int aptId) {
-        restTemplate.delete("http://localhost:8100/api/v1/appointments/{aptId}}", aptId);
+        restTemplate.delete("http://localhost:8100/api/v1/appointments/{aptId}", aptId);
     }
     //error
     @PostMapping("/appointments")
