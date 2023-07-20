@@ -1,4 +1,4 @@
-package com.perficient.managementservice.ManagementService;
+package com.perficient.managementservice.ManagementService.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

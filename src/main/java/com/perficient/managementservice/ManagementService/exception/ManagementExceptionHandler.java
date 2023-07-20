@@ -1,4 +1,4 @@
-package com.perficient.managementservice.ManagementService;
+package com.perficient.managementservice.ManagementService.exception;
 
 import java.time.LocalDateTime;
 
@@ -15,6 +15,18 @@ public class ManagementExceptionHandler extends ResponseEntityExceptionHandler {
     public final ResponseEntity<ErrorDetails> handleAllExceptions(Exception ex, WebRequest request) throws Exception {
         ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
         return new ResponseEntity<ErrorDetails>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler(AppointmentNotFoundException.class)
+    public final ResponseEntity<ErrorDetails> handleAppointmentNotFoundException(Exception ex, WebRequest request) throws Exception{
+        ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
+        return new ResponseEntity<ErrorDetails>(errorDetails, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(InvalidAppointmentIdException.class)
+    public ResponseEntity<ErrorDetails> handleInvalidAppointmentIdException(InvalidAppointmentIdException ex, WebRequest request) {
+        ErrorDetails errorDetails = new ErrorDetails(LocalDateTime.now(), ex.getMessage(), request.getDescription(false));
+        return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
     }
 
 }
